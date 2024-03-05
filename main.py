@@ -173,7 +173,7 @@ def img_object_detection_to_img(file: bytes = File(...)):
 
     # add bbox on image
     # final_image = add_bboxs_on_img(image = input_image, predict = predict)
-    final_image = crop_image_by_predict(input_image, predict)
+    final_image = crop_image_by_predict(input_image, predict, "bird")
     if final_image == None:
         final_image = final_image = add_bboxs_on_img(image = input_image, predict = predict)
 
