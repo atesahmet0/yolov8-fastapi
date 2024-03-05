@@ -174,6 +174,8 @@ def img_object_detection_to_img(file: bytes = File(...)):
     # add bbox on image
     # final_image = add_bboxs_on_img(image = input_image, predict = predict)
     final_image = crop_image_by_predict(input_image, predict)
+    if final_image == None:
+        final_image = final_image = add_bboxs_on_img(image = input_image, predict = predict)
 
     # return image in bytes format
     return StreamingResponse(content=get_bytes_from_image(final_image), media_type="image/jpeg")
